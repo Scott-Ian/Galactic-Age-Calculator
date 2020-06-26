@@ -5,6 +5,20 @@ export class GalacticAge {
     this.sex = sex;
     this.country = country;
     this.smoker = smoker;
+
+    this.lifeExpectancy = this.lifeExpectancyMethod();
+    this.planetList = ["Earth", "Mercury", "Venus", "Mars", "Jupiter"];
+    this.planetYearRatios = [1, .24, .62, 1.88, 11.86];
+    this.lifeLeftByPlanet = this.lifeLeftByPlanetMethod();
+  }
+
+  lifeLeftByPlanetMethod () {
+    let lifeLeftByPlanetArray = [];
+
+    for (let i = 0; i < this.planetYearRatios.length; i++) {
+      lifeLeftByPlanetArray.push(parseFloat((this.lifeLeft()/this.planetYearRatios[i]).toFixed(2)));
+    }
+    return lifeLeftByPlanetArray;
   }
 
   mercuryAge() {
@@ -23,42 +37,41 @@ export class GalacticAge {
     return parseFloat((this.earthAge/11.86).toFixed(2));
   }
 
-  lifeExpectancy() {
-    let lifeExpectancy;
-
+  lifeExpectancyMethod() {
+    let lifeLeft
     if (this.country === "USA") {
       if (this.sex == "Female") {
-        lifeExpectancy = 81.4;
+        lifeLeft = 81.4;
       } else {
-        lifeExpectancy = 76.3
+        lifeLeft = 76.3
       }
     }
 
     if (this.country === "Japan") {
       if (this.sex == "Female") {
-        lifeExpectancy = 87.5;
+        lifeLeft = 87.5;
       } else {
-        lifeExpectancy = 81.3
+        lifeLeft = 81.3
       }
     }
 
     if (this.country === "Germany") {
       if (this.sex == "Female") {
-        lifeExpectancy = 83.6;
+        lifeLeft = 83.6;
       } else {
-        lifeExpectancy = 78.8
+        lifeLeft = 78.8
       }
     }
 
     if (this.smoker === true) {
-      lifeExpectancy -= 10;
+      lifeLeft -= 10;
     }
 
-    return lifeExpectancy;
+    return lifeLeft;
   }
 
   lifeLeft() {
-    const lifeLeft = parseFloat((this.lifeExpectancy() - this.earthAge).toFixed(2));
+    const lifeLeft = parseFloat((this.lifeExpectancyMethod() - this.earthAge).toFixed(2));
     return lifeLeft;
   }
 

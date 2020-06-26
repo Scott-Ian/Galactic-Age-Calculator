@@ -36,8 +36,8 @@ describe ('age', ()=> {
   });
 
   test('should determine the users average life expectancy', () => {
-    expect(testUser.lifeExpectancy()).toEqual(81.4);
-    expect(germanSmoker.lifeExpectancy()).toEqual(68.8);
+    expect(testUser.lifeExpectancyMethod()).toEqual(81.4);
+    expect(germanSmoker.lifeExpectancyMethod()).toEqual(68.8);
   });
 
   test('should determine the number of years left until life expectancy is met', () => {
@@ -46,11 +46,11 @@ describe ('age', ()=> {
   });
 
   test('should determine the number of years left until life expectancy is met in Earth, Mercury, Venus, Mars, and Jupiter years', () => {
-    expect(testUser.lifeLeft()[0]).toBeCloseTo(49.4);
-    expect(testUser.lifeLeft()[1]).toBeCloseTo(49.4);
-    expect(testUser.lifeLeft()[2]).toBeCloseTo(49.4);
-    expect(testUser.lifeLeft()[3]).toBeCloseTo(49.4);
+    expect(testUser.lifeLeftByPlanet[0]).toBeCloseTo(49.4);
+    expect(testUser.lifeLeftByPlanet[1]).toBeCloseTo(205.83);
+    expect(testUser.lifeLeftByPlanet[2]).toBeCloseTo(79.68);
+    expect(testUser.lifeLeftByPlanet[3]).toBeCloseTo(26.28);
+    expect(testUser.lifeLeftByPlanet[4]).toBeCloseTo(4.17);
   });
-
 
 })
