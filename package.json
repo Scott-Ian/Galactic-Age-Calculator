@@ -1,7 +1,7 @@
 {
-  "name": "project-name",
+  "name": "Galactic Age Calculator",
   "version": "1.0.0",
-  "description": "description-here",
+  "description": "A program that evaluates a users age in various sol system planet years, as well as some basic life-expectancy functionality",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
@@ -11,7 +11,7 @@
     "debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand"
   },
   "keywords": [],
-  "author": "your-name-here",
+  "author": "Ian Scott",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.4",
