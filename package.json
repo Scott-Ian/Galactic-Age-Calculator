@@ -1,5 +1,5 @@
 {
-  "name": "Galactic Age Calculator",
+  "name": "galactic-age-calculator",
   "version": "1.0.0",
   "description": "A program that evaluates a users age in various sol system planet years, as well as some basic life-expectancy functionality",
   "main": "index.js",
