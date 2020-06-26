@@ -40,5 +40,10 @@ describe ('age', ()=> {
     expect(germanSmoker.lifeExpectancy()).toEqual(68.8);
   });
 
+  test('should determine the number of years left until life expectancy is met', () => {
+    expect(testUser.lifeLeft()).toEqual(49.4);
+    expect(germanSmoker.lifeLeft()).toEqual(23.8);
+  });
+
 
 })
