@@ -43,8 +43,8 @@ describe ('age', ()=> {
   });
 
   test('should determine the number of years left until life expectancy is met', () => {
-    expect(testUser.lifeLeft()).toBeCloseTo(49.4);
-    expect(germanSmoker.lifeLeft()).toBeCloseTo(23.8);
+    expect(testUser.lifeLeft).toEqual(49.4);
+    expect(germanSmoker.lifeLeft).toEqual(23.8);
   });
 
   test('should determine the number of years left until life expectancy is met in Earth, Mercury, Venus, Mars, and Jupiter years', () => {
@@ -56,8 +56,8 @@ describe ('age', ()=> {
   });
 
   test('should be able to determine if a user has exceeded their life expectancy', ()=> {
-    expect(testUser.exceeededLifeExpectancy).toBeFalsy();
-    expect(oldJapaneseSmoker.exceeededLifeExpectancy).toBeTruthy();
+    expect(testUser.exceededLifeExpectancy).toBe(false);
+    expect(oldJapaneseSmoker.exceededLifeExpectancy).toBe(true);
   })
 
 })

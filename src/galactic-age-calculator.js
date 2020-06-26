@@ -8,19 +8,11 @@ export class GalacticAge {
     this.exceededLifeExpectancy = false;
 
     this.lifeExpectancy = this.lifeExpectancyMethod();
+    this.lifeLeft = this.lifeLeftMethod();
     this.planetList = ["Earth", "Mercury", "Venus", "Mars", "Jupiter"];
     this.planetYearRatios = [1, .24, .62, 1.88, 11.86];
     this.ageByPlanetYears = this.ageByPlanetYearsMethod();
     this.lifeLeftByPlanet = this.lifeLeftByPlanetMethod();
-  }
-
-  lifeLeftByPlanetMethod () {
-    let lifeLeftByPlanetArray = [];
-
-    for (let i = 0; i < this.planetYearRatios.length; i++) {
-      lifeLeftByPlanetArray.push(parseFloat((this.lifeLeft()/this.planetYearRatios[i]).toFixed(2)));
-    }
-    return lifeLeftByPlanetArray;
   }
 
   ageByPlanetYearsMethod () {
@@ -30,6 +22,15 @@ export class GalacticAge {
       ageByPlanetYearsArray.push(parseFloat((this.earthAge/this.planetYearRatios[i]).toFixed(2)));
     }
     return ageByPlanetYearsArray;
+  }
+
+  lifeLeftByPlanetMethod () {
+    let lifeLeftByPlanetArray = [];
+
+    for (let i = 0; i < this.planetYearRatios.length; i++) {
+      lifeLeftByPlanetArray.push(parseFloat((this.lifeLeft/this.planetYearRatios[i]).toFixed(2)));
+    }
+    return lifeLeftByPlanetArray;
   }
 
   lifeExpectancyMethod() {
@@ -65,12 +66,11 @@ export class GalacticAge {
     return lifeExpectancy;
   }
 
-  lifeLeft() {
+  lifeLeftMethod() {
     let lifeLeft = parseFloat((this.lifeExpectancyMethod() - this.earthAge).toFixed(2));
     if (lifeLeft < 0) {
       this.exceededLifeExpectancy = true;
     }
-
     return lifeLeft;
   }
 }
