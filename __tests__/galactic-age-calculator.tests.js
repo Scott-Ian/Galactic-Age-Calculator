@@ -16,19 +16,19 @@ describe ('age', ()=> {
   });
 
   test('should return the users age in Mercury years', () => {
-    expect(testUser.ageByPlanetYears[1]).toEqual(133.33);
+    expect(testUser.ageByPlanetYears[1]).toEqual("Your age in Mercury years is: 133.33");
   });
 
   test('should return the users age in Venus years', () => {
-    expect(testUser.ageByPlanetYears[2]).toEqual(51.61);
+    expect(testUser.ageByPlanetYears[2]).toEqual("Your age in Venus years is: 51.61");
   });
 
   test('should return the users age in Mars years', () => {
-    expect(testUser.ageByPlanetYears[3]).toEqual(17.02);
+    expect(testUser.ageByPlanetYears[3]).toEqual("Your age in Mars years is: 17.02");
   });
 
   test('should return the users age in Jupiter years', () => {
-    expect(testUser.ageByPlanetYears[4]).toEqual(2.7);
+    expect(testUser.ageByPlanetYears[4]).toEqual("Your age in Jupiter years is: 2.7");
   });
 
   test('should return the users life expectancy data', () => {
@@ -48,11 +48,11 @@ describe ('age', ()=> {
   });
 
   test('should determine the number of years left until life expectancy is met in Earth, Mercury, Venus, Mars, and Jupiter years', () => {
-    expect(testUser.lifeLeftByPlanet[0]).toBeCloseTo(49.4);
-    expect(testUser.lifeLeftByPlanet[1]).toBeCloseTo(205.83);
-    expect(testUser.lifeLeftByPlanet[2]).toBeCloseTo(79.68);
-    expect(testUser.lifeLeftByPlanet[3]).toBeCloseTo(26.28);
-    expect(testUser.lifeLeftByPlanet[4]).toBeCloseTo(4.17);
+    expect(testUser.lifeLeftByPlanet[0]).toEqual("Your remaining life expectancy in Earth years is: 49.4");
+    expect(testUser.lifeLeftByPlanet[1]).toEqual("Your remaining life expectancy in Mercury years is: 205.83");
+    expect(testUser.lifeLeftByPlanet[2]).toEqual("Your remaining life expectancy in Venus years is: 79.68");
+    expect(testUser.lifeLeftByPlanet[3]).toEqual("Your remaining life expectancy in Mars years is: 26.28");
+    expect(testUser.lifeLeftByPlanet[4]).toEqual("Your remaining life expectancy in Jupiter years is: 4.17");
   });
 
   test('should be able to determine if a user has exceeded their life expectancy', ()=> {

@@ -19,7 +19,7 @@ export class GalacticAge {
     let ageByPlanetYearsArray = [];
 
     for (let i = 0; i < this.planetYearRatios.length; i++) {
-      ageByPlanetYearsArray.push(parseFloat((this.earthAge/this.planetYearRatios[i]).toFixed(2)));
+      ageByPlanetYearsArray.push(`Your age in ${this.planetList[i]} years is: ${parseFloat((this.earthAge/this.planetYearRatios[i]).toFixed(2))}`);
     }
     return ageByPlanetYearsArray;
   }
@@ -28,7 +28,7 @@ export class GalacticAge {
     let lifeLeftByPlanetArray = [];
 
     for (let i = 0; i < this.planetYearRatios.length; i++) {
-      lifeLeftByPlanetArray.push(parseFloat((this.lifeLeft/this.planetYearRatios[i]).toFixed(2)));
+      lifeLeftByPlanetArray.push(`Your remaining life expectancy in ${this.planetList[i]} years is: ${parseFloat((this.lifeLeft/this.planetYearRatios[i]).toFixed(2))}`);
     }
     return lifeLeftByPlanetArray;
   }
