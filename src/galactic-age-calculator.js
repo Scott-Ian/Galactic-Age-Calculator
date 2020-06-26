@@ -57,4 +57,9 @@ export class GalacticAge {
     return lifeExpectancy;
   }
 
+  lifeLeft() {
+    const lifeLeft = parseFloat((this.lifeExpectancy() - this.earthAge).toFixed(2));
+    return lifeLeft;
+  }
+
 }
