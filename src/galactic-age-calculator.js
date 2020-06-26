@@ -9,6 +9,7 @@ export class GalacticAge {
     this.lifeExpectancy = this.lifeExpectancyMethod();
     this.planetList = ["Earth", "Mercury", "Venus", "Mars", "Jupiter"];
     this.planetYearRatios = [1, .24, .62, 1.88, 11.86];
+    this.ageByPlanetYears = this.ageByPlanetYearsMethod();
     this.lifeLeftByPlanet = this.lifeLeftByPlanetMethod();
   }
 
@@ -19,6 +20,15 @@ export class GalacticAge {
       lifeLeftByPlanetArray.push(parseFloat((this.lifeLeft()/this.planetYearRatios[i]).toFixed(2)));
     }
     return lifeLeftByPlanetArray;
+  }
+
+  ageByPlanetYearsMethod () {
+    let ageByPlanetYearsArray = [];
+
+    for (let i = 0; i < this.planetYearRatios.length; i++) {
+      ageByPlanetYearsArray.push(parseFloat((this.earthAge/this.planetYearRatios[i]).toFixed(2)));
+    }
+    return ageByPlanetYearsArray;
   }
 
   mercuryAge() {
@@ -38,12 +48,12 @@ export class GalacticAge {
   }
 
   lifeExpectancyMethod() {
-    let lifeLeft
+    let lifeLeft;
     if (this.country === "USA") {
       if (this.sex == "Female") {
         lifeLeft = 81.4;
       } else {
-        lifeLeft = 76.3
+        lifeLeft = 76.3;
       }
     }
 
@@ -51,7 +61,7 @@ export class GalacticAge {
       if (this.sex == "Female") {
         lifeLeft = 87.5;
       } else {
-        lifeLeft = 81.3
+        lifeLeft = 81.3;
       }
     }
 
@@ -59,7 +69,7 @@ export class GalacticAge {
       if (this.sex == "Female") {
         lifeLeft = 83.6;
       } else {
-        lifeLeft = 78.8
+        lifeLeft = 78.8;
       }
     }
 
@@ -71,7 +81,8 @@ export class GalacticAge {
   }
 
   lifeLeft() {
-    const lifeLeft = parseFloat((this.lifeExpectancyMethod() - this.earthAge).toFixed(2));
+    let lifeLeft = parseFloat((this.lifeExpectancyMethod() - this.earthAge).toFixed(2));
+
     return lifeLeft;
   }
 

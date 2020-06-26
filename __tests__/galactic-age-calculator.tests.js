@@ -14,19 +14,19 @@ describe ('age', ()=> {
   });
 
   test('should return the users age in Mercury years', () => {
-    expect(testUser.mercuryAge()).toEqual(133.33);
+    expect(testUser.ageByPlanetYears[1]).toEqual(133.33);
   });
 
   test('should return the users age in Venus years', () => {
-    expect(testUser.venusAge()).toEqual(51.61);
+    expect(testUser.ageByPlanetYears[2]).toEqual(51.61);
   });
 
   test('should return the users age in Mars years', () => {
-    expect(testUser.marsAge()).toEqual(17.02);
+    expect(testUser.ageByPlanetYears[3]).toEqual(17.02);
   });
 
   test('should return the users age in Jupiter years', () => {
-    expect(testUser.jupiterAge()).toEqual(2.7);
+    expect(testUser.ageByPlanetYears[4]).toEqual(2.7);
   });
 
   test('should return the users life expectancy data', () => {
