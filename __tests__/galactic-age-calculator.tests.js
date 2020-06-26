@@ -24,7 +24,7 @@ describe ('age', ()=> {
   });
 
   test('should return the users age in Jupiter years', () => {
-    expect(testUser.jupiterAge()).toEqual(2.69);
+    expect(testUser.jupiterAge()).toEqual(2.7);
   });
 
 

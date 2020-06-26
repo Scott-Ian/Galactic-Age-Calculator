@@ -16,4 +16,8 @@ export class GalacticAge {
     return parseFloat((this.earthAge/1.88).toFixed(2));
   }
 
+  jupiterAge() {
+    return parseFloat((this.earthAge/11.86).toFixed(2));
+  }
+
 }
