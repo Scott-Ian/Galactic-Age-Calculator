@@ -45,5 +45,12 @@ describe ('age', ()=> {
     expect(germanSmoker.lifeLeft()).toBeCloseTo(23.8);
   });
 
+  test('should determine the number of years left until life expectancy is met in Earth, Mercury, Venus, Mars, and Jupiter years', () => {
+    expect(testUser.lifeLeft()[0]).toBeCloseTo(49.4);
+    expect(testUser.lifeLeft()[1]).toBeCloseTo(49.4);
+    expect(testUser.lifeLeft()[2]).toBeCloseTo(49.4);
+    expect(testUser.lifeLeft()[3]).toBeCloseTo(49.4);
+  });
+
 
 })
