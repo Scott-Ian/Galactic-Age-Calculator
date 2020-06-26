@@ -24,11 +24,16 @@ export class GalacticAge {
     return ageByPlanetYearsArray;
   }
 
-  lifeLeftByPlanetMethod () {
+  lifeLeftByPlanetMethod () { 
     let lifeLeftByPlanetArray = [];
-
-    for (let i = 0; i < this.planetYearRatios.length; i++) {
-      lifeLeftByPlanetArray.push(`Your remaining life expectancy in ${this.planetList[i]} years is: ${parseFloat((this.lifeLeft/this.planetYearRatios[i]).toFixed(2))}`);
+    if (this.exceededLifeExpectancy === false) {
+      for (let i = 0; i < this.planetYearRatios.length; i++) {
+        lifeLeftByPlanetArray.push(`Your remaining life expectancy in ${this.planetList[i]} years is: ${parseFloat((this.lifeLeft/this.planetYearRatios[i]).toFixed(2))}`);
+      }
+    } else {
+      for (let i = 0; i < this.planetYearRatios.length; i++) {
+        lifeLeftByPlanetArray.push(`You have exceeded your life expectancy in ${this.planetList[i]} years by: ${parseFloat(-1 * (this.lifeLeft/this.planetYearRatios[i]).toFixed(2))}`);
+      }
     }
     return lifeLeftByPlanetArray;
   }

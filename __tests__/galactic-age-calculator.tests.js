@@ -61,7 +61,7 @@ describe ('age', ()=> {
   })
 
   test('should identify and respond differently to life-left if user has exceeded their life expectancy', () => {
-    expect(oldJapaneseSmoker.lifeLeftByPlanet[1]).toEqual("You have exceeded your life expectancy in Mercury Years by: 13");
+    expect(oldJapaneseSmoker.lifeLeftByPlanet[1]).toEqual("You have exceeded your life expectancy in Mercury years by: 86.25");
   })
 
 })
