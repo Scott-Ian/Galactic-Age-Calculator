@@ -33,5 +33,9 @@ describe ('age', ()=> {
     expect(testUser.smoker).toEqual(false);
   });
 
+  test('should determine the users average life expectancy', () => {
+    expect(testUser.lifeExpectancy()).toEqual(81.1);
+  });
+
 
 })
