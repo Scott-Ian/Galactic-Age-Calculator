@@ -1,7 +1,10 @@
 export class GalacticAge {
   
-  constructor (earthAge) {
+  constructor (earthAge, sex, country, smoker) {
     this.earthAge = earthAge;
+    this.sex = sex;
+    this.country = country;
+    this.smoker = smoker;
   }
 
   mercuryAge() {
