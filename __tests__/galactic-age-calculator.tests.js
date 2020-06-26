@@ -4,7 +4,7 @@ describe ('age', ()=> {
   let testUser;
 
   beforeEach( () => {
-    testUser = new GalacticAge(32);
+    testUser = new GalacticAge(32, "female", "USA", false);
   })
   
   test('should store and retrieve a users submitted age in Earth years', () => {
@@ -25,6 +25,12 @@ describe ('age', ()=> {
 
   test('should return the users age in Jupiter years', () => {
     expect(testUser.jupiterAge()).toEqual(2.7);
+  });
+
+  test('should return the users life expectancy data', () => {
+    expect(testUser.sex).toEqual("Female");
+    expect(testUser.country).toEqual("USA");
+    expect(testUser.smoker).toEqual(False);
   });
 
 
