@@ -4,4 +4,8 @@ export class GalacticAge {
     this.earthAge = earthAge;
   }
 
+  mercuryAge() {
+    return parseFloat((this.earthAge/.24).toFixed(2));
+  }
+
 }

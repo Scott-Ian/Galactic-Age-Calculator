@@ -12,7 +12,7 @@ describe ('age', ()=> {
   });
 
   test('should return the users age in Mercury years', () => {
-    expect(testUser.mercuryAge()).toReturn(133.33);
+    expect(testUser.mercuryAge()).toEqual(133.33);
   } )
 
 
