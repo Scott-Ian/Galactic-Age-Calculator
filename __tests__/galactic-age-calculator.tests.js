@@ -3,10 +3,12 @@ import {GalacticAge} from './../src/galactic-age-calculator'
 describe ('age', ()=> {
   let testUser;
   let germanSmoker;
+  let oldJapaneseSmoker;
 
   beforeEach( () => {
     testUser = new GalacticAge(32, "Female", "USA", false);
     germanSmoker = new GalacticAge(45, "Male", "Germany", true);
+    oldJapaneseSmoker = new GalacticAge(92, "Male", "Japan", true)
   })
   
   test('should store and retrieve a users submitted age in Earth years', () => {
@@ -52,5 +54,10 @@ describe ('age', ()=> {
     expect(testUser.lifeLeftByPlanet[3]).toBeCloseTo(26.28);
     expect(testUser.lifeLeftByPlanet[4]).toBeCloseTo(4.17);
   });
+
+  test('should be able to determine if a user has exceeded their life expectancy', ()=> {
+    expect(testUser.exceeededLifeExpectancy).toBeFalsy();
+    expect(oldJapaneseSmoker.exceeededLifeExpectancy).toBeTruthy();
+  })
 
 })
