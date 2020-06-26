@@ -8,4 +8,8 @@ export class GalacticAge {
     return parseFloat((this.earthAge/.24).toFixed(2));
   }
 
+  venusAge() {
+    return parseFloat((this.earthAge/.62).toFixed(2));
+  }
+
 }
