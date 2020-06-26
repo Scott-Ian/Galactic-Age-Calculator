@@ -23,4 +23,38 @@ export class GalacticAge {
     return parseFloat((this.earthAge/11.86).toFixed(2));
   }
 
+  lifeExpectancy() {
+    let lifeExpectancy;
+
+    if (this.country === "USA") {
+      if (this.sex == "Female") {
+        lifeExpectancy = 81.4;
+      } else {
+        lifeExpectancy = 76.3
+      }
+    }
+
+    if (this.country === "Japan") {
+      if (this.sex == "Female") {
+        lifeExpectancy = 87.5;
+      } else {
+        lifeExpectancy = 81.3
+      }
+    }
+
+    if (this.country === "Germany") {
+      if (this.sex == "Female") {
+        lifeExpectancy = 83.6;
+      } else {
+        lifeExpectancy = 78.8
+      }
+    }
+
+    if (this.smoker === true) {
+      lifeExpectancy -= 10;
+    }
+
+    return lifeExpectancy;
+  }
+
 }

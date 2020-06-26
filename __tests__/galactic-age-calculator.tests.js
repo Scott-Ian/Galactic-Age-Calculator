@@ -2,9 +2,11 @@ import {GalacticAge} from './../src/galactic-age-calculator'
 
 describe ('age', ()=> {
   let testUser;
+  let germanSmoker;
 
   beforeEach( () => {
     testUser = new GalacticAge(32, "Female", "USA", false);
+    germanSmoker = new GalacticAge(45, "Male", "Germany", true);
   })
   
   test('should store and retrieve a users submitted age in Earth years', () => {
@@ -34,7 +36,8 @@ describe ('age', ()=> {
   });
 
   test('should determine the users average life expectancy', () => {
-    expect(testUser.lifeExpectancy()).toEqual(81.1);
+    expect(testUser.lifeExpectancy()).toEqual(81.4);
+    expect(germanSmoker.lifeExpectancy()).toEqual(68.8);
   });
 
 
